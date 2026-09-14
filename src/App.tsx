@@ -375,45 +375,45 @@ export default function App() {
         )}
 
         {/* 4-Column Trust & Confidence Bar (Modern Retail Style) */}
-        <section className="bg-slate-50 py-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="flex items-center gap-3.5 p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-              <div className="w-11 h-11 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center shrink-0 border border-cyan-100 font-bold">
-                <Truck className="w-5 h-5" />
+        <section className="bg-slate-50 py-6 sm:py-8 px-3 sm:px-6 lg:px-8 border-b border-slate-200">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+            <div className="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center shrink-0 border border-cyan-100 font-bold">
+                <Truck className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-tight">Envíos a Todo el Perú</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">Shalom, Marvisur, Olva o express</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3.5 p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-              <div className="w-11 h-11 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-100 font-bold">
-                <Box className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-tight">Precios Mayoristas</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">Descuentos directos por volumen</p>
+              <div className="min-w-0">
+                <h4 className="text-[11px] sm:text-xs font-bold text-slate-800 uppercase tracking-tight truncate">Envíos a Todo el Perú</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Agencias o express</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-              <div className="w-11 h-11 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100 font-bold">
-                <Shield className="w-5 h-5" />
+            <div className="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-100 font-bold">
+                <Box className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-tight">Probados 100%</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">Revisión de luces antes del despacho</p>
+              <div className="min-w-0">
+                <h4 className="text-[11px] sm:text-xs font-bold text-slate-800 uppercase tracking-tight truncate">Precios Mayoristas</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Por bulto y caja</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-              <div className="w-11 h-11 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100 font-bold">
-                <CreditCard className="w-5 h-5" />
+            <div className="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100 font-bold">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-tight">Medios de Pago</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">Yape, Plin, BCP, BBVA y tarjetas</p>
+              <div className="min-w-0">
+                <h4 className="text-[11px] sm:text-xs font-bold text-slate-800 uppercase tracking-tight truncate">Probados 100%</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Revisión de luces LED</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2.5 sm:gap-3.5 p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100 font-bold">
+                <CreditCard className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-[11px] sm:text-xs font-bold text-slate-800 uppercase tracking-tight truncate">Medios de Pago</h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 truncate">Yape, Plin y BCP</p>
               </div>
             </div>
           </div>

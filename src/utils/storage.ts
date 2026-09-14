@@ -91,26 +91,29 @@ export function formatCurrency(amount: number, symbol: string = 'S/'): string {
   })}`;
 }
 
-export const DEFAULT_WHATSAPP_TEMPLATE = `{greeting}
-✨ *NUEVO PEDIDO - {storeName}* ✨
-📅 Fecha: {date}
-━━━━━━━━━━━━━━━━━━━━━━
+export const DEFAULT_WHATSAPP_TEMPLATE = `🎄✨ *NUEVO PEDIDO OFICIAL - {storeName}* ✨🎄
+━━━━━━━━━━━━━━━━━━━━━━━━
+🛒 *SOLICITUD DE COMPRA WEB*
+📅 *Fecha y Hora:* {date}
+━━━━━━━━━━━━━━━━━━━━━━━━
 👤 *DATOS DEL CLIENTE:*
-• *Nombre:* {customerName}
-• *Teléfono:* {customerPhone}
-• *Modalidad:* {deliveryType}
-• *Dirección:* {deliveryAddress}
-• *Método de Pago:* {paymentMethod}
-━━━━━━━━━━━━━━━━━━━━━━
-🛒 *PRODUCTOS DEL PEDIDO:*
+• 👤 *Nombre:* {customerName}
+• 📱 *WhatsApp:* {customerPhone}
+• 🚚 *Modalidad:* {deliveryType}
+• 📍 *Destino:* {deliveryAddress}
+• 💳 *Forma de Pago:* {paymentMethod}
+━━━━━━━━━━━━━━━━━━━━━━━━
+📦 *PRODUCTOS SELECCIONADOS:*
+
 {items}
-━━━━━━━━━━━━━━━━━━━━━━
-📊 *RESUMEN DE COSTOS:*
-• Subtotal: *{subtotal}*
-• Costo de Envío: *{shipping}*
+━━━━━━━━━━━━━━━━━━━━━━━━
+💰 *RESUMEN DE LIQUIDACIÓN:*
+• 🧾 *Subtotal:* {subtotal}
+• 🚚 *Envío / Despacho:* {shipping}
 {promo}
-💰 *TOTAL A PAGAR: {total}*
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━
+⭐ *TOTAL A PAGAR: {total}*
+━━━━━━━━━━━━━━━━━━━━━━━━
 {notes}
 {closing}`;
 
@@ -118,60 +121,66 @@ export const PRESET_WHATSAPP_TEMPLATES = [
   {
     id: 'navidad',
     title: '🎄 Navidad & Fiestas (Con Cupón y Saludo Festivo)',
-    greeting: '🎄 ¡Felices Fiestas y Próspero Año Nuevo!',
+    greeting: '🎄🎅 ¡Felices Fiestas de parte de LOS FARRUS HUB!',
     promoCode: 'NAVIDAD2026',
-    promoMessage: '10% de descuento navideño en compras seleccionadas',
-    closing: '🎅 ¡Gracias por iluminar la Navidad con nosotros! Esperamos su confirmación para despacho inmediato.',
-    template: `{greeting}
-✨ *NUEVO PEDIDO - {storeName}* ✨
-📅 Fecha: {date}
-━━━━━━━━━━━━━━━━━━━━━━
+    promoMessage: 'Descuento navideño aplicado en catálogo',
+    closing: '✨ ¡Gracias por iluminar la Navidad con nosotros! Esperamos su confirmación de stock para despacho inmediato.',
+    template: `🎄✨ *NUEVO PEDIDO OFICIAL - {storeName}* ✨🎄
+━━━━━━━━━━━━━━━━━━━━━━━━
+🛒 *SOLICITUD DE COMPRA NAVIDEÑA*
+📅 *Fecha y Hora:* {date}
+━━━━━━━━━━━━━━━━━━━━━━━━
 👤 *DATOS DEL CLIENTE:*
-• *Nombre:* {customerName}
-• *Teléfono:* {customerPhone}
-• *Modalidad:* {deliveryType}
-• *Dirección:* {deliveryAddress}
-• *Método de Pago:* {paymentMethod}
-━━━━━━━━━━━━━━━━━━━━━━
-🛒 *PRODUCTOS DEL PEDIDO:*
+• 👤 *Nombre:* {customerName}
+• 📱 *WhatsApp:* {customerPhone}
+• 🚚 *Modalidad:* {deliveryType}
+• 📍 *Destino:* {deliveryAddress}
+• 💳 *Forma de Pago:* {paymentMethod}
+━━━━━━━━━━━━━━━━━━━━━━━━
+📦 *PRODUCTOS SELECCIONADOS:*
+
 {items}
-━━━━━━━━━━━━━━━━━━━━━━
-📊 *RESUMEN DE COSTOS:*
-• Subtotal: *{subtotal}*
-• Costo de Envío: *{shipping}*
+━━━━━━━━━━━━━━━━━━━━━━━━
+💰 *RESUMEN DE LIQUIDACIÓN:*
+• 🧾 *Subtotal:* {subtotal}
+• 🚚 *Envío / Despacho:* {shipping}
 {promo}
-💰 *TOTAL A PAGAR: {total}*
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━
+⭐ *TOTAL A PAGAR: {total}*
+━━━━━━━━━━━━━━━━━━━━━━━━
 {notes}
 {closing}`,
   },
   {
     id: 'mayorista',
     title: '📦 Venta Mayorista & Campaña por Lotes',
-    greeting: '📦 ¡Atención Especial - Cotización y Pedido Mayorista!',
+    greeting: '🏢📦 ¡Atención Comercial - Cotización y Pedido Mayorista!',
     promoCode: 'MAYORISTA2026',
-    promoMessage: 'Precios especiales por embalaje y flete preferencial',
-    closing: '⚡ Despacho express por agencia. Solicitamos confirmación de stock por bulto/caja para emitir guía de remisión.',
-    template: `{greeting}
-🏢 *SOLICITUD DE PEDIDO - {storeName}*
-📅 Fecha y Hora: {date}
-━━━━━━━━━━━━━━━━━━━━━━
+    promoMessage: 'Precios especiales por embalaje/bulto y flete preferencial',
+    closing: '⚡ Despacho express por agencia o almacén central. Solicitamos confirmación de stock para emitir guía de remisión.',
+    template: `🏢📦 *PEDIDO MAYORISTA - {storeName}* 📦🏢
+━━━━━━━━━━━━━━━━━━━━━━━━
+📋 *COTIZACIÓN Y DESPACHO POR LOTES*
+📅 *Fecha y Hora:* {date}
+━━━━━━━━━━━━━━━━━━━━━━━━
 👤 *CONTACTO COMERCIAL:*
-• *Cliente:* {customerName}
-• *WhatsApp:* {customerPhone}
-• *Entrega:* {deliveryType}
-• *Destino / Agencia:* {deliveryAddress}
-• *Forma de Pago:* {paymentMethod}
-━━━━━━━━━━━━━━━━━━━━━━
-📦 *DETALLE DE MERCADERÍA:*
+• 👤 *Cliente / Empresa:* {customerName}
+• 📱 *WhatsApp:* {customerPhone}
+• 🚚 *Modalidad:* {deliveryType}
+• 📍 *Destino / Agencia:* {deliveryAddress}
+• 💳 *Forma de Pago:* {paymentMethod}
+━━━━━━━━━━━━━━━━━━━━━━━━
+📦 *DETALLE DE MERCADERÍA POR CAJA/LOTE:*
+
 {items}
-━━━━━━━━━━━━━━━━━━━━━━
-💵 *LIQUIDACIÓN:*
-• Valor de Mercadería: *{subtotal}*
-• Flete / Envío: *{shipping}*
+━━━━━━━━━━━━━━━━━━━━━━━━
+💵 *LIQUIDACIÓN MAYORISTA:*
+• 🧾 *Valor Mercadería:* {subtotal}
+• 🚚 *Flete / Despacho:* {shipping}
 {promo}
+━━━━━━━━━━━━━━━━━━━━━━━━
 ⭐ *TOTAL FINAL: {total}*
-━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━
 {notes}
 {closing}`,
   },
@@ -182,16 +191,15 @@ export const PRESET_WHATSAPP_TEMPLATES = [
     promoCode: 'OFERTAWEB',
     promoMessage: 'Beneficio exclusivo web',
     closing: 'Quedo atento a la confirmación de mi pedido. ¡Muchas gracias!',
-    template: `{greeting}
-*Tienda:* {storeName} ({date})
-*Cliente:* {customerName} ({customerPhone})
-*Entrega:* {deliveryType} - {deliveryAddress}
-*Pago:* {paymentMethod}
+    template: `⭐ *PEDIDO WEB - {storeName}* ⭐
+📅 {date}
+👤 {customerName} ({customerPhone})
+📍 {deliveryType} • {deliveryAddress}
+💳 {paymentMethod}
 
-*Pedido:*
+📦 *Artículos:*
 {items}
-
-*Total a Pagar:* {total} ({shipping} de envío)
+💰 *Total:* {total} ({shipping} de envío)
 {promo}
 {notes}
 {closing}`,
@@ -233,21 +241,32 @@ export function generateWhatsAppOrderUrl(
       ? '🚚 Envío a Domicilio'
       : '🏬 Retiro en Tienda / Almacén';
 
+  const numberBadges = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
+
   let itemsText = '';
   items.forEach((item, index) => {
     const isBox = item.buyMode === 'box';
     const unitPrice = isBox ? (item.product.priceBox || item.product.priceUnit) : item.product.priceUnit;
     const itemTotal = unitPrice * item.quantity;
+    const numBadge = numberBadges[index] || `🔹`;
     const modeLabel = isBox
-      ? `📦 Caja/Lote (${item.product.boxQuantity ? item.product.boxQuantity + ' und' : 'x Mayor'})`
+      ? `📦 Caja Mayorista (${item.product.boxQuantity ? item.product.boxQuantity + ' und' : 'x Mayor'})`
       : '🏷️ Unidad';
 
-    itemsText += `${index + 1}. *[${item.product.code}]* ${item.product.name}\n`;
-    itemsText += `   • Cantidad: *${item.quantity}* (${modeLabel})\n`;
-    itemsText += `   • Precio: ${formatCurrency(unitPrice, settings.currencySymbol)} c/u  ➔  *${formatCurrency(itemTotal, settings.currencySymbol)}*\n`;
-    if (item.product.technicalSheet.dimensions) {
-      itemsText += `   • Medida: ${item.product.technicalSheet.dimensions}\n`;
+    itemsText += `${numBadge} *[${item.product.code}] ${item.product.name}*\n`;
+    itemsText += `   ▫️ *Modalidad:* ${modeLabel}\n`;
+    itemsText += `   ▫️ *Cantidad:* ${item.quantity} ${isBox ? 'caja(s)' : 'unidad(es)'}\n`;
+    itemsText += `   ▫️ *Precio Unitario:* ${formatCurrency(unitPrice, settings.currencySymbol)}\n`;
+    itemsText += `   ▫️ *Subtotal:* *${formatCurrency(itemTotal, settings.currencySymbol)}*\n`;
+    
+    const specs: string[] = [];
+    if (item.product.technicalSheet.dimensions) specs.push(`📐 Medida: ${item.product.technicalSheet.dimensions}`);
+    if (item.product.technicalSheet.lights) specs.push(`💡 Luces: ${item.product.technicalSheet.lights}`);
+    if (item.product.technicalSheet.voltage) specs.push(`⚡ Voltaje: ${item.product.technicalSheet.voltage}`);
+    if (specs.length > 0) {
+      itemsText += `   ▫️ *Ficha Técnica:* ${specs.join(' | ')}\n`;
     }
+    itemsText += `\n`;
   });
 
   // Promotional line formatting
@@ -255,11 +274,11 @@ export function generateWhatsAppOrderUrl(
   const activePromoCode = checkout.appliedPromoCode || (settings.promoActive !== false ? settings.promoCode : '');
   if (activePromoCode) {
     if (discount > 0) {
-      promoLine = `• Cupón / Promoción: *${activePromoCode}* (-${formatCurrency(discount, settings.currencySymbol)} de descuento)`;
+      promoLine = `• 🎁 *Cupón / Descuento:* *${activePromoCode}* (-${formatCurrency(discount, settings.currencySymbol)})`;
     } else if (settings.promoMessage) {
-      promoLine = `• Cupón / Promoción: *${activePromoCode}* (${settings.promoMessage})`;
+      promoLine = `• 🎁 *Cupón / Promoción:* *${activePromoCode}* (${settings.promoMessage})`;
     } else {
-      promoLine = `• Cupón de Temporada: *${activePromoCode}*`;
+      promoLine = `• 🎁 *Cupón de Temporada:* *${activePromoCode}*`;
     }
   }
 
@@ -267,7 +286,7 @@ export function generateWhatsAppOrderUrl(
   const greetingText = settings.whatsappGreeting ? settings.whatsappGreeting.trim() : '';
   const closingText = settings.whatsappClosingNotes
     ? settings.whatsappClosingNotes.trim()
-    : 'Hola! Acabo de armar mi pedido en la web. ¿Me confirman la disponibilidad y datos de despacho por favor? ¡Gracias!';
+    : '💬 ¡Hola! Acabo de armar mi pedido en la tienda web. ¿Me confirman disponibilidad y datos de despacho por favor? ¡Muchas gracias! 😊🎅';
 
   const notesText = checkout.deliveryNotes
     ? `📝 *Observaciones:* ${checkout.deliveryNotes}`
@@ -275,7 +294,7 @@ export function generateWhatsAppOrderUrl(
 
   const addressText = checkout.deliveryType === 'delivery'
     ? (checkout.deliveryAddress ? `${checkout.deliveryAddress}${checkout.deliveryCity ? ` (${checkout.deliveryCity})` : ''}` : 'Por coordinar')
-    : 'Retiro presencial en tienda / almacén';
+    : '🏬 Retiro presencial en tienda / almacén';
 
   const templateToUse = settings.whatsappTemplate && settings.whatsappTemplate.trim().length > 10
     ? settings.whatsappTemplate
@@ -386,3 +405,56 @@ export function getSampleWhatsAppMessage(settings: StoreSettings): string {
     discount
   ).text;
 }
+
+/**
+ * Builds direct WhatsApp consultation link for a single product with rich emojis and structured specs
+ */
+export function generateProductConsultUrl(
+  product: Product,
+  quantity: number = 1,
+  mode: 'unit' | 'box' = 'unit',
+  settings: StoreSettings
+): string {
+  const cleanPhone = settings.whatsappPhone.replace(/\D/g, '');
+  const isBox = mode === 'box' && !!product.priceBox;
+  const currentPrice = isBox ? product.priceBox! : product.priceUnit;
+  const totalAmount = currentPrice * quantity;
+  
+  let msg = `👋 ¡Hola *${settings.storeName.toUpperCase()}*! 🎄✨\n\n`;
+  
+  if (isBox) {
+    msg += `🏢📦 *CONSULTA POR LOTE / MAYORISTA*\n`;
+    msg += `Deseo cotizar disponibilidad y envío por caja para este artículo:\n\n`;
+    msg += `📌 *[${product.code}] ${product.name}*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `• 📦 *Modalidad:* Caja Mayorista (${product.boxQuantity ? product.boxQuantity + ' und por caja' : 'Lote por mayor'})\n`;
+    msg += `• 🔢 *Cantidad de Cajas:* ${quantity} caja(s)\n`;
+    msg += `• 💵 *Precio por Caja:* ${formatCurrency(currentPrice, settings.currencySymbol)}\n`;
+    msg += `• 💰 *Inversión Total Estimada:* *${formatCurrency(totalAmount, settings.currencySymbol)}*\n`;
+  } else {
+    msg += `🛍️✨ *CONSULTA DE PRODUCTO / CATÁLOGO*\n`;
+    msg += `Deseo consultar stock y detalles de este artículo:\n\n`;
+    msg += `📌 *[${product.code}] ${product.name}*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `• 🏷️ *Modalidad:* Venta por Unidad\n`;
+    msg += `• 🔢 *Cantidad:* ${quantity} unidad(es)\n`;
+    msg += `• 💵 *Precio de Catálogo:* ${formatCurrency(currentPrice, settings.currencySymbol)} c/u\n`;
+    msg += `• 💰 *Total:* *${formatCurrency(totalAmount, settings.currencySymbol)}*\n`;
+  }
+  
+  // Technical specs
+  const specs: string[] = [];
+  if (product.technicalSheet.dimensions) specs.push(`📐 Medida: ${product.technicalSheet.dimensions}`);
+  if (product.technicalSheet.lights) specs.push(`💡 Luces: ${product.technicalSheet.lights}`);
+  if (product.technicalSheet.voltage) specs.push(`⚡ Voltaje: ${product.technicalSheet.voltage}`);
+  if (product.technicalSheet.material) specs.push(`✨ Material: ${product.technicalSheet.material}`);
+  
+  if (specs.length > 0) {
+    msg += `• 📋 *Ficha Técnica:* ${specs.join(' | ')}\n`;
+  }
+  msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `🚚 ¿Cuentan con stock para despacho inmediato o entrega? ¡Quedo atento(a), muchas gracias! 😊🎅`;
+  
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
+}
+

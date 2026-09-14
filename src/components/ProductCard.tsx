@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { ShoppingBag, Eye, MessageCircle, Check, Zap, Sparkles, TrendingDown } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { Product, StoreSettings } from '../types';
-import { formatCurrency } from '../utils/storage';
+import { formatCurrency, generateProductConsultUrl } from '../utils/storage';
 
 interface ProductCardProps {
   product: Product;
@@ -68,9 +68,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     setTimeout(() => setAddedAnimation(false), 1200);
   };
 
-  const directConsultUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-    `Hola LOS FARRUS HUB! Deseo consultar detalles y disponibilidad de *[${product.code}] ${product.name}* (Precio: ${formatCurrency(currentPrice, settings.currencySymbol)}).`
-  )}`;
+  const directConsultUrl = generateProductConsultUrl(
+    product,
+    quantity,
+    selectedMode,
+    settings
+  );
 
   return (
     <motion.div

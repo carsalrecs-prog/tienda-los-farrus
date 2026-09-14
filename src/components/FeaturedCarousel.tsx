@@ -82,7 +82,7 @@ export const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
             <div
               key={`featured-${product.id}`}
               onClick={() => onOpenDetails(product)}
-              className="group/item relative flex-none w-[270px] sm:w-[320px] aspect-square rounded-2xl overflow-hidden border border-slate-200 bg-white hover:border-amber-400 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+              className="group/item relative flex-none w-[230px] sm:w-[280px] md:w-[320px] aspect-square rounded-2xl overflow-hidden border border-slate-200 bg-white hover:border-amber-400 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
             >
               {/* Image */}
               <img
@@ -92,7 +92,7 @@ export const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
                 loading="lazy"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
-                    'https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=800&q=80';
+                    '/products/hero-showcase.png';
                 }}
               />
 
