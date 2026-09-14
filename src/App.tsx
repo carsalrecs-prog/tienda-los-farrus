@@ -329,8 +329,8 @@ export default function App() {
                   {/* Nighttime Ambience Preview */}
                   <div className="relative aspect-4/3 w-full overflow-hidden bg-slate-950">
                     <img
-                      src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1000&q=80"
-                      alt="Iluminación Navideña y Figuras LED encendidas de noche"
+                      src="/products/hero-showcase.png"
+                      alt="Papá Noel Acrílico 130cm con 440 LED encendido de noche"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-black/20" />

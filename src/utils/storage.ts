@@ -1,16 +1,31 @@
 import { Product, StoreSettings, CartItem, OrderCheckoutData } from '../types';
 import { INITIAL_PRODUCTS, DEFAULT_STORE_SETTINGS } from '../data/initialProducts';
 
-const PRODUCTS_KEY = 'tienda_catalog_products_v1';
+const PRODUCTS_KEY = 'tienda_catalog_products_v2';
 const SETTINGS_KEY = 'tienda_store_settings_v1';
 const ADMIN_AUTH_KEY = 'tienda_admin_session_v1';
 
 export function getStoredProducts(): Product[] {
   try {
+    // Clear legacy v1 key if present
+    localStorage.removeItem('tienda_catalog_products_v1');
     const saved = localStorage.getItem(PRODUCTS_KEY);
-    if (!saved) return INITIAL_PRODUCTS;
+    if (!saved) {
+      saveProducts(INITIAL_PRODUCTS);
+      return INITIAL_PRODUCTS;
+    }
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) && parsed.length > 0 ? parsed : INITIAL_PRODUCTS;
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      saveProducts(INITIAL_PRODUCTS);
+      return INITIAL_PRODUCTS;
+    }
+    // If any saved product has unsplash image or outdated paths, refresh with INITIAL_PRODUCTS
+    const hasLegacyImages = parsed.some(p => !p.image || p.image.includes('unsplash.com'));
+    if (hasLegacyImages) {
+      saveProducts(INITIAL_PRODUCTS);
+      return INITIAL_PRODUCTS;
+    }
+    return parsed;
   } catch (error) {
     console.error('Error loading products from storage:', error);
     return INITIAL_PRODUCTS;
