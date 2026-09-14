@@ -50,10 +50,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         onClick={onClose}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white border-l border-slate-200 shadow-2xl flex flex-col text-slate-800">
+      <div className="fixed inset-y-0 right-0 w-full sm:max-w-md flex flex-col pointer-events-none">
+        <div className="w-full h-full bg-white sm:border-l border-slate-200 shadow-2xl flex flex-col text-slate-800 pointer-events-auto overflow-hidden">
           {/* Drawer Header */}
-          <div className="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-white">
+          <div className="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-white shrink-0 pt-[max(1rem,env(safe-area-inset-top))]">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-2xl bg-cyan-50 text-cyan-700 border border-cyan-200 flex items-center justify-center font-black">
                 <ShoppingBag className="w-4 h-4" />
@@ -155,10 +155,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     <img
                       src={item.product.image}
                       alt={item.product.name}
-                      className="w-18 h-18 object-cover rounded-xl shrink-0 bg-slate-100 border border-slate-200"
+                      className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl shrink-0 bg-slate-100 border border-slate-200"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src =
-                          'https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=400&q=80';
+                          '/products/hero-showcase.png';
                       }}
                     />
 
@@ -172,10 +172,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                           <button
                             id={`btn-remove-${item.product.id}-${item.buyMode}`}
                             onClick={() => onRemoveItem(item.product.id, item.buyMode)}
-                            className="text-slate-400 hover:text-rose-600 transition-colors p-1"
+                            className="text-slate-400 hover:text-rose-600 transition-colors p-1 cursor-pointer"
                             title="Eliminar producto"
                           >
-                            <Trash2 className="w-3.5 h-3.5" />
+                            <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
 
@@ -202,7 +202,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
                       {/* Quantity Stepper & Subtotal */}
                       <div className="flex items-center justify-between mt-2 pt-2 border-t border-slate-100">
-                        <div className="flex items-center border border-slate-200 rounded-xl bg-slate-100 overflow-hidden h-7">
+                        <div className="flex items-center border border-slate-200 rounded-xl bg-slate-100 overflow-hidden h-8">
                           <button
                             onClick={() =>
                               onUpdateQuantity(
@@ -211,7 +211,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                                 item.quantity - 1
                               )
                             }
-                            className="px-2.5 h-full text-slate-600 hover:bg-slate-200 hover:text-slate-900 font-bold text-xs cursor-pointer"
+                            className="w-7 h-full text-slate-600 hover:bg-slate-200 hover:text-slate-900 font-bold text-xs cursor-pointer flex items-center justify-center transition-colors"
                           >
                             -
                           </button>
@@ -226,7 +226,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                                 item.quantity + 1
                               )
                             }
-                            className="px-2.5 h-full text-slate-600 hover:bg-slate-200 hover:text-slate-900 font-bold text-xs cursor-pointer"
+                            className="w-7 h-full text-slate-600 hover:bg-slate-200 hover:text-slate-900 font-bold text-xs cursor-pointer flex items-center justify-center transition-colors"
                           >
                             +
                           </button>
@@ -245,7 +245,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
           {/* Drawer Footer with Transparent Cost Breakdown */}
           {items.length > 0 && (
-            <div className="p-4 sm:p-5 border-t border-slate-200 bg-white space-y-3 shadow-lg">
+            <div className="p-3.5 sm:p-5 border-t border-slate-200 bg-white space-y-2.5 sm:space-y-3 shadow-lg shrink-0 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-5">
               {/* Delivery method selector */}
               <div>
                 <span className="text-[11px] uppercase tracking-wider font-bold text-slate-500 block mb-1.5">

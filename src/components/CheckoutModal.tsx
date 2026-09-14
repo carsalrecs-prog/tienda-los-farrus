@@ -195,14 +195,14 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-stone-900/70 backdrop-blur-xs overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-sm overflow-hidden">
       <div
         id="checkout-modal-card"
-        className="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-stone-200 overflow-hidden my-4 transition-all"
+        className="relative bg-white w-full max-w-2xl h-[92dvh] sm:h-auto sm:max-h-[90vh] rounded-t-3xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col transition-all text-slate-800"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header with step indicators */}
-        <div className="p-4 sm:p-5 border-b border-stone-200 bg-stone-50/80 flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-slate-200 bg-slate-50/80 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black">
               {currentStep === 'completed' ? '✓' : currentStep === 'payment' ? '2' : '1'}
@@ -231,7 +231,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         </div>
 
         {/* Content body based on current step */}
-        <div className="p-5 sm:p-6 max-h-[78vh] overflow-y-auto">
+        <div className="p-4 sm:p-6 flex-1 overflow-y-auto pb-[max(2rem,env(safe-area-inset-bottom))]">
           {/* STEP 1: CUSTOMER & DELIVERY DATA */}
           {currentStep === 'info' && (
             <form onSubmit={handleProceedToPayment} className="space-y-4">
