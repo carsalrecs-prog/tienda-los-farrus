@@ -1,0 +1,6 @@
+{
+  "name": "Catálogo y Tienda Virtual",
+  "description": "Tienda virtual con carrito de compras intuitivo, pasarela integrada, pedidos automáticos por WhatsApp y panel administrativo seguro para gestión de productos y precios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
