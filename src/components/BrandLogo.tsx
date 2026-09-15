@@ -5,6 +5,7 @@ interface BrandLogoProps {
   className?: string;
   showBadge?: boolean;
   theme?: 'light' | 'dark';
+  showIcon?: boolean;
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
@@ -12,12 +13,20 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = '',
   showBadge = true,
   theme = 'light',
+  showIcon = true,
 }) => {
   const sizeClasses = {
     sm: 'text-xs px-2.5 py-1 gap-1.5',
     md: 'text-sm px-3.5 py-1.5 gap-2',
     lg: 'text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-2.5 gap-2.5',
     xl: 'text-xl sm:text-2xl px-6 py-3 gap-3',
+  };
+
+  const iconSizes = {
+    sm: 'w-4 h-4',
+    md: 'w-6 h-6',
+    lg: 'w-8 h-8',
+    xl: 'w-10 h-10',
   };
 
   const isLight = theme === 'light';
@@ -32,6 +41,15 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           : ''
       } ${sizeClasses[size]} ${className}`}
     >
+      {/* Brand Shopping Bag Icon */}
+      {showIcon && (
+        <img
+          src="/logo.png"
+          alt="LOS FARRUS"
+          className={`${iconSizes[size]} object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-200`}
+        />
+      )}
+
       {/* "LOS" in Vibrant Electric Cyan */}
       <span className={`${isLight ? 'text-cyan-600' : 'text-cyan-400'} font-black tracking-tighter`}>
         LOS
