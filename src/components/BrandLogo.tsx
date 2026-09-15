@@ -23,10 +23,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   };
 
   const iconSizes = {
-    sm: 'w-4 h-4',
-    md: 'w-6 h-6',
-    lg: 'w-8 h-8',
-    xl: 'w-10 h-10',
+    sm: 'w-5 h-5',
+    md: 'w-7.5 h-7.5 sm:w-8 sm:h-8',
+    lg: 'w-10 h-10',
+    xl: 'w-12 h-12',
   };
 
   const isLight = theme === 'light';
