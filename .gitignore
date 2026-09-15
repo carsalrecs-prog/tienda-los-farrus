@@ -9,3 +9,5 @@ coverage/
 tienda-moderna/
 *.zip
 .vercel
+*.xlsx
+
